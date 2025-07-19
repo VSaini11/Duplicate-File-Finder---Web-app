@@ -300,7 +300,7 @@ export default function DuplicateFileDetector() {
                 <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent truncate">
                   ZeroDup
                 </h1>
-                <p className="text-slate-400 text-xs sm:text-sm hidden sm:block">Advanced  duplicate detection</p>
+                <p className="text-slate-400 text-xs sm:text-sm hidden sm:block">Advanced duplicate detection</p>
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
