@@ -290,38 +290,38 @@ export default function DuplicateFileDetector() {
 
       {/* Header */}
       <div className="relative z-10 border-b border-slate-800/50 bg-slate-900/20 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30 backdrop-blur-sm">
-                <Search className="h-6 w-6 text-blue-400" />
+            <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
+              <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30 backdrop-blur-sm flex-shrink-0">
+                <Search className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400" />
               </div>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent">
+              <div className="min-w-0 flex-1">
+                <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent truncate">
                   Duplicate File Analyzer
                 </h1>
-                <p className="text-slate-400 text-sm">Advanced AI-powered duplicate detection</p>
+                <p className="text-slate-400 text-xs sm:text-sm hidden sm:block">Advanced AI-powered duplicate detection</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <Button
                 variant="outline"
                 size="sm"
-                className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm"
+                className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm px-2 sm:px-3 text-xs sm:text-sm"
                 onClick={() => window.open('/analytics', '_blank')}
               >
-                <BarChart3 className="h-4 w-4 mr-2" />
-                Analytics
+                <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-2" />
+                <span className="hidden sm:inline">Analytics</span>
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm"
+                  className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm px-2 sm:px-3 text-xs sm:text-sm"
                 >
-                  <Cpu className="h-4 w-4 mr-2" />
-                  How It Works
+                  <Cpu className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">How It Works</span>
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-6xl max-h-[90vh] bg-black border-slate-800 backdrop-blur-xl overflow-y-auto">
@@ -574,11 +574,11 @@ export default function DuplicateFileDetector() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-6 py-16">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 py-8 sm:py-16">
+        <div className="max-w-7xl mx-auto w-full">
           {/* Main Title */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
                 Where Creative Teams
               </span>
@@ -587,41 +587,41 @@ export default function DuplicateFileDetector() {
                 Get Things Done
               </span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-sm sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
               Step into a new dimension of file analysis — Where data thinks, learns, 
               and evolves in real time. Precision, power, and creativity redefined.
             </p>
           </div>
 
           {/* Main Upload Section with Animated Stats */}
-          <div className="relative flex items-center justify-center gap-16">
-            {/* Left Stats */}
-            <div className="hidden lg:flex flex-col gap-8">
+          <div className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-16">
+            {/* Left Stats - Mobile: Top, Desktop: Left */}
+            <div className="flex flex-row lg:flex-col gap-4 lg:gap-8 justify-center lg:justify-start order-1 lg:order-1">
               <div className="relative group animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-500 w-48">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">98.6%</div>
-                  <div className="text-slate-400 text-sm uppercase tracking-wider">Accuracy rate</div>
+                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-3 sm:p-6 transform group-hover:scale-105 transition-all duration-500 w-32 sm:w-40 lg:w-48">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-400 mb-1 sm:mb-2">98.6%</div>
+                  <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Accuracy rate</div>
                 </div>
               </div>
               
               <div className="relative group animate-float-delayed">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-500 w-48">
-                  <div className="text-3xl font-bold text-green-400 mb-2">256K+</div>
-                  <div className="text-slate-400 text-sm uppercase tracking-wider">Files Analyzed</div>
+                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-3 sm:p-6 transform group-hover:scale-105 transition-all duration-500 w-32 sm:w-40 lg:w-48">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-400 mb-1 sm:mb-2">256K+</div>
+                  <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Files Analyzed</div>
                 </div>
               </div>
             </div>
 
             {/* Center Upload Area */}
-            <Card className="relative bg-slate-900/20 border-slate-700/50 backdrop-blur-xl transition-all duration-500 hover:bg-slate-900/30 w-full max-w-2xl animate-glow">
+            <Card className="relative bg-slate-900/20 border-slate-700/50 backdrop-blur-xl transition-all duration-500 hover:bg-slate-900/30 w-full max-w-2xl animate-glow order-2">
               <CardContent className="p-0">
                 <div className="relative">
                   {/* 3D Isometric Upload Area */}
-                  <div className="relative p-12">
+                  <div className="relative p-4 sm:p-8 lg:p-12">
                     <div
-                      className={`relative border-2 border-dashed rounded-3xl p-12 text-center transition-all duration-500 cursor-pointer transform perspective-1000 ${
+                      className={`relative border-2 border-dashed rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-center transition-all duration-500 cursor-pointer transform perspective-1000 ${
                         dragActive
                           ? "border-blue-500/70 bg-blue-500/5 scale-[1.02] rotate-x-2 shadow-2xl shadow-blue-500/20"
                           : "border-slate-600/50 hover:border-slate-500/70 hover:bg-slate-800/20 hover:scale-[1.01] hover:shadow-xl"
@@ -650,29 +650,29 @@ export default function DuplicateFileDetector() {
                         <div className="absolute bottom-6 right-6 w-3 h-3 bg-purple-500/15 rounded transform rotate-45 animate-bounce delay-1000"></div>
                       </div>
 
-                      <div className="space-y-6 relative z-10">
+                      <div className="space-y-4 sm:space-y-6 relative z-10">
                         <div
-                          className={`mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-700/50 flex items-center justify-center transition-all duration-500 border border-slate-600/30 ${
+                          className={`mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-700/50 flex items-center justify-center transition-all duration-500 border border-slate-600/30 ${
                             dragActive ? "bg-gradient-to-br from-blue-500/20 to-purple-500/20 scale-110 border-blue-500/50" : ""
                           }`}
                         >
                           <Upload
-                            className={`h-10 w-10 transition-colors duration-500 ${
+                            className={`h-8 w-8 sm:h-10 sm:w-10 transition-colors duration-500 ${
                               dragActive ? "text-blue-400" : "text-slate-400"
                             }`}
                           />
                         </div>
                         
                         <div>
-                          <p className="text-xl font-semibold text-slate-200 mb-2">Drop files or folders here</p>
-                          <p className="text-slate-400 mb-2 text-sm">Supports individual files and entire folder structures</p>
-                          <p className="text-xs text-slate-500">
+                          <p className="text-lg sm:text-xl font-semibold text-slate-200 mb-2">Drop files or folders here</p>
+                          <p className="text-slate-400 mb-2 text-xs sm:text-sm">Supports individual files and entire folder structures</p>
+                          <p className="text-xs text-slate-500 px-2">
                             .txt, .js, .ts, .jsx, .tsx, .html, .css, .json, .xml, .md, .py, .java, .cpp, .c, .h, .php, .rb, .go,
                             .rs, .swift, .kt, .scala, .sh, .yml, .yaml, .toml, .ini, .cfg, .conf
                           </p>
                         </div>
                         
-                        <div className="flex gap-3 justify-center">
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
                           <input
                             type="file"
                             multiple
@@ -693,7 +693,7 @@ export default function DuplicateFileDetector() {
                           />
                           <Button
                             variant="outline"
-                            className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 hover:border-slate-500/70 text-slate-200 transition-all duration-300 backdrop-blur-sm px-6 py-2"
+                            className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 hover:border-slate-500/70 text-slate-200 transition-all duration-300 backdrop-blur-sm px-4 sm:px-6 py-2 text-sm sm:text-base"
                             onClick={(e) => {
                               e.preventDefault()
                               e.stopPropagation()
@@ -701,12 +701,12 @@ export default function DuplicateFileDetector() {
                               document.getElementById("file-input")?.click()
                             }}
                           >
-                            <FileText className="h-4 w-4 mr-2" />
-                            Browse Files
+                            <FileText className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                            <span className="text-xs sm:text-sm">Browse Files</span>
                           </Button>
                           <Button
                             variant="outline"
-                            className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 hover:border-slate-500/70 text-slate-200 transition-all duration-300 backdrop-blur-sm px-6 py-2"
+                            className="bg-slate-800/30 border-slate-600/50 hover:bg-slate-700/50 hover:border-slate-500/70 text-slate-200 transition-all duration-300 backdrop-blur-sm px-4 sm:px-6 py-2 text-sm sm:text-base"
                             onClick={(e) => {
                               e.preventDefault()
                               e.stopPropagation()
@@ -717,8 +717,8 @@ export default function DuplicateFileDetector() {
                               }
                             }}
                           >
-                            <Folder className="h-4 w-4 mr-2" />
-                            Browse Folders
+                            <Folder className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                            <span className="text-xs sm:text-sm">Browse Folders</span>
                           </Button>
                         </div>
                       </div>
@@ -728,21 +728,21 @@ export default function DuplicateFileDetector() {
               </CardContent>
             </Card>
 
-            {/* Right Stats */}
-            <div className="hidden lg:flex flex-col gap-8">
+            {/* Right Stats - Mobile: Bottom, Desktop: Right */}
+            <div className="flex flex-row lg:flex-col gap-4 lg:gap-8 justify-center lg:justify-start order-3">
               <div className="relative group animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-500 w-48">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">10x</div>
-                  <div className="text-slate-400 text-sm uppercase tracking-wider">Faster analysis</div>
+                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-3 sm:p-6 transform group-hover:scale-105 transition-all duration-500 w-32 sm:w-40 lg:w-48">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">10x</div>
+                  <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Faster analysis</div>
                 </div>
               </div>
               
               <div className="relative group animate-float-delayed">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-500 w-48">
-                  <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-                  <div className="text-slate-400 text-sm uppercase tracking-wider">Always Available</div>
+                <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-3 sm:p-6 transform group-hover:scale-105 transition-all duration-500 w-32 sm:w-40 lg:w-48">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-yellow-400 mb-1 sm:mb-2">24/7</div>
+                  <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Always Available</div>
                 </div>
               </div>
             </div>
@@ -750,9 +750,9 @@ export default function DuplicateFileDetector() {
 
           {/* Action buttons */}
           {files.length > 0 && (
-            <div className="mt-12 space-y-8">
+            <div className="mt-6 sm:mt-8 lg:mt-12 space-y-6 sm:space-y-8">
               <div className="text-center">
-                <div className="inline-flex items-center gap-3 bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl px-6 py-3">
+                <div className="inline-flex items-center gap-2 sm:gap-3 bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2 sm:py-3">
                   <div className="flex gap-2">
                     {stats.folders > 0 && (
                       <Badge variant="outline" className="text-xs border-blue-600/50 text-blue-300 bg-blue-500/10 backdrop-blur-sm">
@@ -766,7 +766,7 @@ export default function DuplicateFileDetector() {
                 </div>
               </div>
 
-              <div className="flex gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
                 <Button
                   onClick={() => {
                     processFiles()
@@ -779,35 +779,35 @@ export default function DuplicateFileDetector() {
                     }, 100)
                   }}
                   disabled={processing}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 disabled:opacity-50 px-12 py-4 text-lg rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transform hover:scale-105"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 disabled:opacity-50 px-6 sm:px-8 lg:px-12 py-3 sm:py-4 text-base sm:text-lg rounded-xl sm:rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transform hover:scale-105 w-full sm:w-auto"
                 >
                   {processing ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-3" />
-                      Analyzing...
+                      <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-2 border-white border-t-transparent mr-2 sm:mr-3" />
+                      <span className="text-sm sm:text-base">Analyzing...</span>
                     </>
                   ) : (
                     <>
-                      <Database className="h-5 w-5 mr-3" />
-                      Analyze Files
+                      <Database className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" />
+                      <span className="text-sm sm:text-base">Analyze Files</span>
                     </>
                   )}
                 </Button>
                 <Button
                   variant="outline"
                   onClick={clearFiles}
-                  className="border-slate-600/50 hover:bg-slate-800/30 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm px-8 py-4 text-lg rounded-2xl"
+                  className="border-slate-600/50 hover:bg-slate-800/30 text-slate-300 hover:text-slate-100 transition-all duration-300 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl sm:rounded-2xl w-full sm:w-auto"
                 >
-                  <Trash2 className="h-5 w-5 mr-3" />
-                  Clear
+                  <Trash2 className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" />
+                  <span className="text-sm sm:text-base">Clear</span>
                 </Button>
               </div>
 
               {/* Selected files preview */}
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-slate-900/20 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6">
-                  <h3 className="text-lg font-semibold text-slate-200 mb-4 text-center">Selected Files</h3>
-                  <div className="grid gap-3 max-h-60 overflow-y-auto custom-scrollbar">
+              <div className="max-w-4xl mx-auto px-4">
+                <div className="bg-slate-900/20 backdrop-blur-xl border border-slate-700/50 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-200 mb-3 sm:mb-4 text-center">Selected Files</h3>
+                  <div className="grid gap-2 sm:gap-3 max-h-48 sm:max-h-60 overflow-y-auto custom-scrollbar">
                     {files.slice(0, 5).map((file, index) => (
                       <div
                         key={index}
@@ -846,38 +846,38 @@ export default function DuplicateFileDetector() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
 
         {/* Results Section */}
         {results && (
-          <div id="results-section" className="relative z-10 animate-in slide-in-from-bottom-8 duration-700 py-16">
+          <div id="results-section" className="relative z-10 animate-in slide-in-from-bottom-8 duration-700 py-8 sm:py-16">
             {/* Problem Solving Steps */}
-            <div className="max-w-6xl mx-auto mb-16">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold mb-4">
+            <div className="max-w-6xl mx-auto mb-8 sm:mb-16">
+              <div className="text-center mb-6 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     Analysis Complete
                   </span>
                 </h2>
-                <p className="text-slate-400 text-lg">Here's how we solved your duplicate detection challenge</p>
+                <p className="text-slate-400 text-sm sm:text-base lg:text-lg px-4">Here's how we solved your duplicate detection challenge</p>
               </div>
 
-              <div className="grid md:grid-cols-4 gap-6 mb-16">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-16">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 text-center transform group-hover:scale-105 transition-all duration-500 h-44 flex flex-col">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30">
-                      <span className="text-xl font-bold text-blue-400">1</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center transform group-hover:scale-105 transition-all duration-500 h-32 sm:h-36 lg:h-44 flex flex-col">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 border border-blue-500/30">
+                      <span className="text-sm sm:text-lg lg:text-xl font-bold text-blue-400">1</span>
                     </div>
-                    <h3 className="font-semibold text-slate-100 mb-2 text-sm">Upload & Scan</h3>
-                    <p className="text-xs text-slate-400 flex-1 flex items-center justify-center">
+                    <h3 className="font-semibold text-slate-100 mb-1 sm:mb-2 text-xs sm:text-sm">Upload & Scan</h3>
+                    <p className="text-xs text-slate-400 flex-1 flex items-center justify-center px-1">
                       Processed {results.totalFiles} files with advanced content recognition
                     </p>
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                   <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 text-center transform group-hover:scale-105 transition-all duration-500 h-44 flex flex-col">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl flex items-center justify-center mx-auto mb-3 border border-purple-500/30">
                       <span className="text-xl font-bold text-purple-400">2</span>
