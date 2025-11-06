@@ -146,87 +146,119 @@ erDiagram
 
 ```mermaid
 flowchart TD
-    A[User Uploads Files] --> B[File Validation]
-    B --> C[Content Reading]
-    C --> D[AI Normalization]
-    D --> E[SHA-256 Hash Generation]
-    E --> F[Duplicate Detection]
-    F --> G[Group Formation]
-    G --> H[Results Generation]
-    H --> I[Analytics Tracking]
-    I --> J[Local Storage]
+    %% Main Flow
+    A["🔄 User Uploads Files"] --> B["✓ File Validation"]
+    B --> C["📖 Content Reading"]
+    C --> D["🧠 AI Normalization"]
+    D --> E["🔐 SHA-256 Hash Generation"]
+    E --> F["🔍 Duplicate Detection"]
+    F --> G["📊 Group Formation"]
+    G --> H["📋 Results Generation"]
+    H --> I["📈 Analytics Tracking"]
+    I --> J["💾 Local Storage"]
     
-    K[Analytics Dashboard] --> L[Authentication]
-    L --> M[Data Retrieval]
-    M --> N[Statistics Display]
+    %% Analytics Flow
+    K["📊 Analytics Dashboard"] --> L["🔒 Authentication"]
+    L --> M["📥 Data Retrieval"]
+    M --> N["📊 Statistics Display"]
     
-    O[Session Tracking] --> J
-    P[File Type Analysis] --> J
-    Q[Performance Metrics] --> J
+    %% Additional Tracking
+    O["⏱️ Session Tracking"] --> J
+    P["📁 File Type Analysis"] --> J
+    Q["⚡ Performance Metrics"] --> J
     
-    style A fill:#e1f5fe
-    style H fill:#f3e5f5
-    style J fill:#e8f5e8
-    style K fill:#fff3e0
+    %% Styling for better visibility
+    style A fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000000
+    style B fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style C fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style E fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style F fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000000
+    style G fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style H fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000000
+    style I fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style J fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style K fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000000
+    style L fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style M fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style N fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style O fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style P fill:#fff,stroke:#333,stroke-width:2px,color:#000000
+    style Q fill:#fff,stroke:#333,stroke-width:2px,color:#000000
 ```
 ### 5. User Interface Design Layout
 
 ```mermaid
-graph TB
-    subgraph UI [App Interface]
+flowchart TB
+    subgraph UI["App Interface"]
         direction TB
         
-        %% Top Section: Stats
-        subgraph HEADER [Summary Dashboard]
-            S1[📊 Files Scanned] --- S2[⚠️ Duplicates Found] --- S3[💾 Potential Savings]
+        subgraph HEADER["Summary Dashboard"]
+            S1["📊 Files Scanned"]
+            S2["⚠️ Duplicates Found"]
+            S3["💾 Potential Savings"]
+            S1 --- S2 --- S3
         end
         
-        %% Middle Section: Upload
-        UPLOAD[📁 Upload Area\nDrag & Drop Files/Folders]
+        UPLOAD["📁 Upload Area<br/>Drag & Drop Files/Folders"]
         
-        %% Bottom Section: Results
-        subgraph RESULTS [Analysis Results]
-            TABLE[📄 Results Table Showing Duplicate Groups]
+        subgraph RESULTS["Analysis Results"]
+            TABLE["📄 Results Table<br/>Showing Duplicate Groups"]
             
-            subgraph ACTIONS [Action Bar]
-                DEL[🗑️ Delete Duplicates] -.- EXP[📥 Export Data]
+            subgraph ACTIONS["Action Bar"]
+                DEL["🗑️ Delete<br/>Duplicates"]
+                EXP["📥 Export<br/>Data"]
+                DEL --- EXP
             end
+            
+            TABLE --> ACTIONS
         end
 
-        HEADER === UPLOAD
-        UPLOAD ===>|Analysis Complete| RESULTS
-        TABLE --- ACTIONS
+        HEADER --> UPLOAD
+        UPLOAD --> RESULTS
     end
 
-    %% Styling for wireframe look
-    classDef container fill:#fff,stroke:#333,stroke-width:2px,rx:5px
-    classDef area fill:#f8f9fa,stroke:#999,stroke-width:1px,stroke-dasharray: 5 5
-    classDef actionable fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
-    
-    class UI container
-    class UPLOAD area
-    class DEL,EXP actionable
+    %% Styling
+    style UI fill:#ffffff,stroke:#333333,stroke-width:2px,color:#000000
+    style HEADER fill:#f8f9fa,stroke:#666666,stroke-width:1px,color:#000000
+    style UPLOAD fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style RESULTS fill:#f8f9fa,stroke:#666666,stroke-width:1px,color:#000000
+    style ACTIONS fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000
+    style S1 fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000
+    style S2 fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000
+    style S3 fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000
+    style TABLE fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000
+    style DEL fill:#e3f2fd,stroke:#1565c0,stroke-width:1px,color:#000000
+    style EXP fill:#e3f2fd,stroke:#1565c0,stroke-width:1px,color:#000000
 ```
 
 ### 4.1 Use Case Diagram
 
 ```mermaid
-usecase
-    actor User as "👤 User"
+graph LR
+    User((👤 User))
 
-    rectangle "Duplicate File Detector System" {
-        usecase "Upload File" as UC1
-        usecase "Detect Duplicates" as UC2
-        usecase "Review Duplicates" as UC3
-        usecase "Delete Duplicates" as UC4
-        usecase "Export Cleaned Data" as UC5
-    }
+    subgraph DFD[Duplicate File Detector System]
+        UC1[Upload File]
+        UC2[Detect Duplicates]
+        UC3[Review Duplicates]
+        UC4[Delete Duplicates]
+        UC5[Export Cleaned Data]
+    end
 
     User --> UC1
     User --> UC2
     User --> UC3
     User --> UC4
     User --> UC5
+
+    style User fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style DFD fill:#f5f5f5,stroke:#666,stroke-width:1px
+    style UC1 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    style UC2 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    style UC3 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    style UC4 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    style UC5 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
 ```
 
 ### 4.3 System Flow Diagram
@@ -245,10 +277,18 @@ flowchart TD
     J --> K[Export Cleaned Data]
     K --> L([End])
 
-    style A fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style L fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style G fill:#e1f5fe,stroke:#01579b
-    style E fill:#e8f5e9,stroke:#2e7d32
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style F fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style G fill:#e1f5fe,stroke:#01579b,color:#000
+    style H fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style I fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style J fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#fff,stroke:#333,stroke-width:2px,color:#000
+    style L fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ## Technology Stack
