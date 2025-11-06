@@ -238,12 +238,12 @@ flowchart TB
 graph LR
     User((👤 User))
 
-    subgraph DFD[Duplicate File Detector System]
-        UC1[Upload File]
-        UC2[Detect Duplicates]
-        UC3[Review Duplicates]
-        UC4[Delete Duplicates]
-        UC5[Export Cleaned Data]
+    subgraph DFD["Duplicate File Detector System"]
+        UC1["📁 Upload File"]
+        UC2["🔍 Detect Duplicates"]
+        UC3["👀 Review Duplicates"]
+        UC4["🗑️ Delete Duplicates"]
+        UC5["📥 Export Cleaned Data"]
     end
 
     User --> UC1
@@ -252,13 +252,14 @@ graph LR
     User --> UC4
     User --> UC5
 
-    style User fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style DFD fill:#f5f5f5,stroke:#666,stroke-width:1px
-    style UC1 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
-    style UC2 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
-    style UC3 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
-    style UC4 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
-    style UC5 fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    %% Styling for better visibility
+    style User fill:#ffffff,stroke:#333333,stroke-width:2px,color:#000000
+    style DFD fill:#f8f9fa,stroke:#666666,stroke-width:2px,color:#000000
+    style UC1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style UC2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style UC3 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style UC4 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style UC5 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
 ```
 
 ### 4.3 System Flow Diagram
