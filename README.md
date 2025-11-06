@@ -169,6 +169,87 @@ flowchart TD
     style J fill:#e8f5e8
     style K fill:#fff3e0
 ```
+### 5. User Interface Design Layout
+
+```mermaid
+graph TB
+    subgraph UI [App Interface]
+        direction TB
+        
+        %% Top Section: Stats
+        subgraph HEADER [Summary Dashboard]
+            S1[📊 Files Scanned] --- S2[⚠️ Duplicates Found] --- S3[💾 Potential Savings]
+        end
+        
+        %% Middle Section: Upload
+        UPLOAD[📁 Upload Area\nDrag & Drop Files/Folders]
+        
+        %% Bottom Section: Results
+        subgraph RESULTS [Analysis Results]
+            TABLE[📄 Results Table Showing Duplicate Groups]
+            
+            subgraph ACTIONS [Action Bar]
+                DEL[🗑️ Delete Duplicates] -.- EXP[📥 Export Data]
+            end
+        end
+
+        HEADER === UPLOAD
+        UPLOAD ===>|Analysis Complete| RESULTS
+        TABLE --- ACTIONS
+    end
+
+    %% Styling for wireframe look
+    classDef container fill:#fff,stroke:#333,stroke-width:2px,rx:5px
+    classDef area fill:#f8f9fa,stroke:#999,stroke-width:1px,stroke-dasharray: 5 5
+    classDef actionable fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+    
+    class UI container
+    class UPLOAD area
+    class DEL,EXP actionable
+```
+
+### 4.1 Use Case Diagram
+
+```mermaid
+usecase
+    actor User as "👤 User"
+
+    rectangle "Duplicate File Detector System" {
+        usecase "Upload File" as UC1
+        usecase "Detect Duplicates" as UC2
+        usecase "Review Duplicates" as UC3
+        usecase "Delete Duplicates" as UC4
+        usecase "Export Cleaned Data" as UC5
+    }
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+```
+
+### 4.3 System Flow Diagram
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Upload Dataset/Files/]
+    B --> C[Parse Data]
+    C --> D[Preprocess Data]
+    D --> E[AI Content Normalization]
+    E --> F[Generate SHA-256 Hash Values]
+    F --> G{Detect Duplicates}
+    G -->|Compare Hashes| H[Identify Duplicate Groups]
+    H --> I[Display Duplicate Records]
+    I --> J[/User Confirms Actions/]
+    J --> K[Export Cleaned Data]
+    K --> L([End])
+
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style L fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style G fill:#e1f5fe,stroke:#01579b
+    style E fill:#e8f5e9,stroke:#2e7d32
+```
 
 ## Technology Stack
 
